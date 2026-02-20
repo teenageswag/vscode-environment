@@ -1,0 +1,278 @@
+{
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// FILE NESTING & ASSOCIATIONS
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+		"*.ts": "${capture}.js, ${capture}.d.ts, ${capture}.js.map",
+		"*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+		"*.jsx": "${capture}.js",
+		"*.tsx": "${capture}.ts, ${capture}.d.ts",
+		"tsconfig.json": "tsconfig.*.json",
+		"package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock, .npmrc",
+		".env": ".env.*, env.d.ts",
+		"*.sqlite": "${capture}.${extname}-*",
+		"*.db": "${capture}.${extname}-*",
+		"*.sqlite3": "${capture}.${extname}-*",
+		"*.db3": "${capture}.${extname}-*",
+		"*.sdb": "${capture}.${extname}-*",
+		"*.s3db": "${capture}.${extname}-*",
+		"*.cpp": "${capture}.h, ${capture}.hpp",
+		"*.c": "${capture}.h"
+	},
+	"files.associations": {
+		"*.asm": "asm",
+		"*.inc": "cpp",
+		"*.inl": "cpp",
+		"*.h": "c",
+		"*.hpp": "cpp"
+	},
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// FONTS & TYPOGRAPHY
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"editor.fontFamily": "'Geist Mono', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace",
+	"editor.fontSize": 14.5,
+	"editor.fontLigatures": true,
+	"editor.lineHeight": 22,
+	"editor.fontWeight": "400",
+	"editor.letterSpacing": 0.3,
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.cursorStyle": "underline",
+	"editor.cursorWidth": 2,
+	"editor.smoothScrolling": true,
+	"editor.renderWhitespace": "boundary",
+	"editor.renderLineHighlight": "all",
+	"editor.lineNumbers": "on",
+	"editor.glyphMargin": true,
+	"editor.roundedSelection": true,
+	"editor.occurrencesHighlight": "singleFile",
+	// Bracket pairs & guides
+	"editor.bracketPairColorization.enabled": true,
+	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+	"editor.guides.bracketPairs": "active",
+	"editor.guides.bracketPairsHorizontal": "active",
+	"editor.guides.indentation": true,
+	"editor.guides.highlightActiveIndentation": true,
+	"editor.matchBrackets": "always",
+	// Sticky scroll (keeps context visible)
+	"editor.stickyScroll.enabled": true,
+	"editor.stickyScroll.maxLineCount": 5,
+	// Inlay hints
+	"editor.inlayHints.enabled": "onUnlessPressed",
+	"editor.inlayHints.fontSize": 12,
+	"editor.inlayHints.padding": true,
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// FORMATTING & INDENTATION
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": true,
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": false,
+	"editor.autoClosingBrackets": "always",
+	"editor.autoClosingQuotes": "always",
+	"editor.autoSurround": "languageDefined",
+	"editor.linkedEditing": true,
+	"editor.wordWrap": "off",
+	"editor.wrappingIndent": "indent",
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// MINIMAP & NAVIGATION
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"editor.minimap.enabled": false,
+	"breadcrumbs.enabled": true,
+	"breadcrumbs.filePath": "on",
+	"breadcrumbs.symbolPath": "on",
+	"outline.showVariables": false,
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// INTELLISENSE & SUGGESTIONS
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"editor.suggestSelection": "first",
+	"editor.suggest.insertMode": "replace",
+	"editor.suggest.shareSuggestSelections": true,
+	"editor.suggest.showStatusBar": true,
+	"editor.suggest.preview": true,
+	"editor.inlineSuggest.enabled": true,
+	"editor.quickSuggestions": {
+		"other": true,
+		"comments": false,
+		"strings": false
+	},
+	"editor.acceptSuggestionOnCommitCharacter": true,
+	"editor.acceptSuggestionOnEnter": "on",
+	"editor.parameterHints.enabled": true,
+	"editor.parameterHints.cycle": true,
+	"editor.hover.delay": 300,
+	"editor.hover.sticky": true,
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// C/C++ SETTINGS
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"[cpp]": {
+		"editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+		"editor.wordBasedSuggestions": "off",
+		"editor.semanticHighlighting.enabled": true,
+		"editor.rulers": [
+			80,
+			120
+		],
+		"editor.tabSize": 4
+	},
+	"[c]": {
+		"editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+		"editor.semanticHighlighting.enabled": true,
+		"editor.rulers": [
+			80,
+			120
+		],
+		"editor.tabSize": 4
+	},
+	// clangd (disable C_Cpp intellisense to avoid conflicts)
+	"clangd.path": "path/to/clangd.exe",
+	"clangd.detectExtensionConflicts": false,
+	"clangd.arguments": [
+		"--background-index",
+		"--clang-tidy",
+		"--header-insertion=iwyu",
+		"--completion-style=detailed",
+		"--function-arg-placeholders=true",
+		"--all-scopes-completion",
+		"--header-insertion-decorators",
+		"--pch-storage=memory",
+		"--log=error"
+	],
+	// Clangd inlay hints (типы переменных, параметры функций)
+	"clangd.inlayHints.enabled": true,
+	"clangd.inlayHints.parameterNames": true,
+	"clangd.inlayHints.deducedTypes": true,
+	"clangd.inlayHints.designators": true,
+	// C/C++ Extension (используется для отладки, IntelliSense отключен в пользу clangd)
+	"C_Cpp.intelliSenseEngine": "disabled",
+	"C_Cpp.autocomplete": "disabled",
+	"C_Cpp.errorSquiggles": "disabled",
+	// Расширенные настройки clang-format для C++
+	"C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, UseTab: ForIndentation, ColumnLimit: 120, AccessModifierOffset: -4, AlignAfterOpenBracket: Align, AlignConsecutiveAssignments: false, AlignConsecutiveDeclarations: false, AlignOperands: Align, AlignTrailingComments: true, AllowAllParametersOfDeclarationOnNextLine: true, AllowShortBlocksOnASingleLine: Empty, AllowShortCaseLabelsOnASingleLine: false, AllowShortFunctionsOnASingleLine: Inline, AllowShortIfStatementsOnASingleLine: Never, AllowShortLambdasOnASingleLine: Inline, AllowShortLoopsOnASingleLine: false, AlwaysBreakTemplateDeclarations: Yes, BinPackArguments: true, BinPackParameters: true, BreakBeforeBinaryOperators: None, BreakBeforeBraces: Attach, BreakConstructorInitializers: BeforeColon, BreakInheritanceList: BeforeColon, CompactNamespaces: false, ConstructorInitializerIndentWidth: 4, ContinuationIndentWidth: 4, Cpp11BracedListStyle: true, DerivePointerAlignment: false, EmptyLineAfterAccessModifier: Never, EmptyLineBeforeAccessModifier: LogicalBlock, FixNamespaceComments: true, IncludeBlocks: Regroup, IndentCaseLabels: false, IndentPPDirectives: BeforeHash, IndentWrappedFunctionNames: false, KeepEmptyLinesAtTheStartOfBlocks: false, MaxEmptyLinesToKeep: 1, NamespaceIndentation: None, PointerAlignment: Left, ReflowComments: true, SortIncludes: CaseSensitive, SortUsingDeclarations: true, SpaceAfterCStyleCast: false, SpaceAfterLogicalNot: false, SpaceAfterTemplateKeyword: true, SpaceBeforeAssignmentOperators: true, SpaceBeforeCpp11BracedList: false, SpaceBeforeCtorInitializerColon: true, SpaceBeforeInheritanceColon: true, SpaceBeforeParens: ControlStatements, SpaceBeforeRangeBasedForLoopColon: true, SpaceInEmptyParentheses: false, SpacesBeforeTrailingComments: 2, SpacesInAngles: Never, SpacesInCStyleCastParentheses: false, SpacesInParentheses: false, SpacesInSquareBrackets: false, Standard: c++20 }",
+	"C_Cpp.clang_format_fallbackStyle": "Google",
+	"C_Cpp.clang_format_sortIncludes": true,
+	"C_Cpp.enhancedColorization": "enabled",
+	"C_Cpp.default.cppStandard": "c++23",
+	"C_Cpp.default.cStandard": "c23",
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// FILE SYSTEM & PERFORMANCE
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"files.autoSave": "afterDelay",
+	"files.autoSaveDelay": 1000,
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.encoding": "utf8",
+	"files.eol": "\n",
+	// Large file protection
+	"editor.largeFileOptimizations": true,
+	"editor.maxTokenizationLineLength": 20000,
+	"files.exclude": {
+		"**/.git": true,
+		"**/.vs": true,
+		"**/build": true,
+		"**/out": true,
+		"**/bin": true,
+		"**/obj": true,
+		"**/*.o": true,
+		"**/*.exe": true,
+		"**/.cache": true,
+		"**/node_modules": false
+	},
+	"files.watcherExclude": {
+		"**/node_modules/**": true,
+		"**/build/**": true,
+		"**/.git/objects/**": true
+	},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/build": true,
+		"**/bin": true,
+		"**/*.min.js": true
+	},
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// TERMINAL
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"terminal.integrated.fontFamily": "'JetBrains Mono', 'Fira Code', monospace",
+	"terminal.integrated.fontSize": 13,
+	"terminal.integrated.lineHeight": 1.2,
+	"terminal.integrated.cursorBlinking": true,
+	"terminal.integrated.cursorStyle": "line",
+	"terminal.integrated.smoothScrolling": true,
+	"terminal.integrated.scrollback": 10000,
+	"terminal.integrated.enablePersistentSessions": true,
+	"terminal.integrated.gpuAcceleration": "auto",
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// WORKBENCH & UI
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"workbench.startupEditor": "none",
+	"workbench.editor.enablePreview": false,
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.editor.tabCloseButton": "right",
+	"workbench.editor.untitled.hint": "hidden",
+	"workbench.list.smoothScrolling": true,
+	"workbench.tree.indent": 16,
+	"workbench.tree.renderIndentGuides": "always",
+	"workbench.activityBar.location": "default",
+	"workbench.sideBar.location": "left",
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// WINDOW
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"window.zoomLevel": 0,
+	"window.menuBarVisibility": "toggle",
+	"window.titleBarStyle": "custom",
+	"window.commandCenter": true,
+	"window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// SECURITY & PRIVACY
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"security.workspace.trust.enabled": true,
+	"security.workspace.trust.untrustedFiles": "prompt",
+	"extensions.ignoreRecommendations": false,
+	"telemetry.telemetryLevel": "off",
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// GIT INTEGRATION
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	"git.autofetch": true,
+	"git.autoStash": true,
+	"git.fetchOnPull": true,
+	"git.pruneOnFetch": true,
+	"git.openRepositoryInParentFolders": "always",
+	"scm.defaultViewMode": "tree",
+	"scm.diffDecorations": "gutter",
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// SEARCH & EXPLORER
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"explorer.compactFolders": false,
+	"explorer.sortOrder": "type",
+	"search.smartCase": true,
+	"search.showLineNumbers": true,
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// DEBUG & MARKDOWN
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"debug.console.fontSize": 13,
+	"debug.console.fontFamily": "'JetBrains Mono', monospace",
+	"debug.inlineValues": "auto",
+	"debug.showBreakpointsInOverviewRuler": true,
+	"markdown.preview.fontSize": 14,
+	"markdown.preview.lineHeight": 1.6,
+	// ═══════════════════════════════════════════════════════════════════════════════
+	// MISC
+	// ═══════════════════════════════════════════════════════════════════════════════
+	"json.schemaDownload.enable": true,
+	"makefile.configureOnOpen": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"diffEditor.renderSideBySide": true,
+	"problems.showCurrentInStatus": true,
+	"workbench.editor.tabActionLocation": "right",
+	"editor.cursorBlinking": "smooth",
+	"workbench.colorTheme": "Minimal Dark",
+	"go.toolsManagement.autoUpdate": true,
+}
